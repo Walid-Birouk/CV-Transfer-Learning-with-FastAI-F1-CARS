@@ -4,8 +4,12 @@ import streamlit as st
 from fastai.vision.all import *
 from PIL import Image
 
-# Function to load the model, using Streamlit's session state to cache the model
+from pathlib import Path
+
 def load_model(model_path):
+    # Ensure the model_path is a Path object, which automatically handles cross-platform path formatting
+    model_path = Path(model_path)
+    
     if 'model' not in st.session_state:
         st.session_state.model = load_learner(model_path, cpu=True)
     return st.session_state.model
