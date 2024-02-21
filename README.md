@@ -17,16 +17,33 @@ We compiled a dataset of Formula 1 car images from key teams: Mercedes, McLaren,
 
 Utilizing FastAI, we applied transfer learning methods to train our model on the collected dataset. The process involved adjusting learning rates and strategically unfreezing model layers to incrementally improve performance. Techniques such as data augmentation and mixed-precision training were employed to enhance the model's robustness and efficiency.
 
-## Conclusion
 
-### Summary of Findings
+## Summary of Findings
 Our project successfully developed a machine learning model capable of distinguishing between Formula 1 cars of different teams with high accuracy. The model's performance was rigorously evaluated, showing excellent results across various metrics, including confusion matrices and AUC values.
 
-### Reflection on Model Performance
+## Confusion matrix obtained when training a model using Mixed precision training method (fp16)
+![conf matrix](./Conf_matrix.jpg)
+
+## Assessment of Model Quality Using comparaison with google teachable machine
+
+## Google's Confusion Matrix
+
+![Google CM](./GTM.png)
+
+### The AUC values obtained for each class were as follows:
+
+- Ferrari F1 Car: AUC = 1.00
+- McLaren F1 Car: AUC = 1.00
+- Mercedes F1 Car: AUC = 1.00
+- Red Bull Racing F1 Car: AUC = 1.00
+- Renault F1 Car: AUC = 1.00
+
+## Reflection on Model Performance
+
 The achieved accuracy underscores the model's ability to identify key features of F1 cars across different conditions. Employing mixed-precision training and discriminative learning rates has significantly contributed to the model's effectiveness.
 
 ### Potential Improvements
-Future work could focus on expanding the dataset, integrating more sophisticated data augmentation techniques, and exploring advanced model architectures. These efforts would aim to further enhance the model's accuracy and generalizability.
+Future work could focus on expanding the dataset and exploring advanced model architectures. These efforts would aim to further enhance the model's accuracy and generalizability.
 
 ### Final Thoughts
 This project underscores the potential of machine learning in sports analytics, particularly in visually intensive domains like Formula 1 racing. The advancements in AI hold promising applications for performance analysis and team strategy optimization in competitive sports.
