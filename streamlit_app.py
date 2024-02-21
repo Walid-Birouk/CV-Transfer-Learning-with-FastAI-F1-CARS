@@ -18,8 +18,8 @@ from pathlib import Path
 # Load your trained model
 def load_model(model_path):
     model_path = Path(model_path)
-    path_str = str(model_path)
-    learn = load_learner(path_str)
+    # path_str = str(model_path)
+    learn = load_learner(model_path)
     return learn
 
 # Function to preprocess the image
@@ -44,7 +44,7 @@ def main():
             st.image(img, caption='Uploaded Image', use_column_width=True)
 
             with st.spinner('Classifying...'):
-                model = load_model("./f1_model.pkl")
+                model = load_model('./f1_model.pkl')
                 prediction, confidence = predict(model, img)
                 st.write(f"Prediction: {prediction}")
                 st.write(f"Confidence: {confidence:.4f}")
