@@ -6,14 +6,21 @@ from PIL import Image
 
 from pathlib import Path
 
+# def load_model(model_path):
+#     # Ensure the model_path is a Path object, which automatically handles cross-platform path formatting
+#     model_path = Path(model_path)
+#     path_str = str(model_path)
+    
+#     if 'model' not in st.session_state:
+#         st.session_state.model = load_learner(path_str, cpu=True)
+#     return st.session_state.model
+
+# Load your trained model
 def load_model(model_path):
-    # Ensure the model_path is a Path object, which automatically handles cross-platform path formatting
     model_path = Path(model_path)
     path_str = str(model_path)
-    
-    if 'model' not in st.session_state:
-        st.session_state.model = load_learner(path_str, cpu=True)
-    return st.session_state.model
+    learn = load_learner(path_str)
+    return learn
 
 # Function to preprocess the image
 def preprocess_image(img, target_size=(224, 224)):
